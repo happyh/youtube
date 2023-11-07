@@ -179,9 +179,9 @@ func (dl *Downloader) videoDLWorker(ctx context.Context, out *os.File, video *yo
 			decor.Percentage(decor.WCSyncSpace),
 		),
 		mpb.AppendDecorators(
-			decor.EwmaETA(decor.ET_STYLE_GO, 90),
+			decor.AverageETA(decor.ET_STYLE_GO, decor.WC{W: 4}),
 			decor.Name(" ] "),
-			decor.EwmaSpeed(decor.UnitKiB, "% .2f", 60),
+			decor.AverageSpeed(decor.UnitKiB, "% .2f", decor.WC{W: 4}),
 		),
 	)
 
